@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Edge, Node, Layout } from '@swimlane/ngx-graph';
+
 
 @Component({
   selector: 'app-nivel1',
@@ -8,3 +10,4 @@ import { Component } from '@angular/core';
 export class Nivel1Component {
 
 }
+

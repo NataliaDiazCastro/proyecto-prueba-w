@@ -1,3 +1,19 @@
 .sidebar.collapsed {
     display: none;
 }
+ /* Sidebar */
+
+  .list-group-item-action:focus {
+    background-color: orange;
+    color: white;
+  }
+
+  .list-group-item:focus{
+    background-color: orange;
+    color: white;
+  }
+
+  .list-group-item-action:active{
+    background-color: orange;
+    color: white;
+  }
