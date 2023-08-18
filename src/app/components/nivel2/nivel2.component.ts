@@ -5,7 +5,7 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-nivel2',
   templateUrl: './nivel2.component.html',
-  styleUrls: ['./nivel2.component.css']
+  styleUrls: ['./nivel2.component.scss']
 })
 export class Nivel2Component implements OnInit {
 

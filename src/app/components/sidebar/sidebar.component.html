@@ -1,4 +1,4 @@
-<div class="sidebar" id="sidebar">
+<div class="sidebar" >
   <ul class="list-group list-group-flush">
     <li class="list-group-item dropdown">
       <button class="btn btn-toggle list-group-item-action rounded" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSection2" aria-expanded="false" aria-controls="collapseSection2">
@@ -11,11 +11,9 @@
         </ul>
       </div>
     </li>
-    <li class="list-group-item btn list-group-item-action border-bottom" >
+    <li class="list-group-item btn list-group-item-action border-bottom"  type="button" [routerLink]="'/explicacion'">
       <!-- Componente Explicación -->
-      <button class="btn rounded" [routerLink]="'/explicacion'" type="button">
         Explicación
-      </button>
     </li>
   </ul>
 </div>
