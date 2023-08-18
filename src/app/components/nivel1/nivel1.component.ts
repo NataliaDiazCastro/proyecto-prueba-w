@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Edge, Node, Layout } from '@swimlane/ngx-graph';
 
 
 @Component({
