@@ -1,0 +1,21 @@
+<div class="sidebar" id="sidebar">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item dropdown">
+      <button class="btn btn-toggle list-group-item-action rounded" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSection2" aria-expanded="false" aria-controls="collapseSection2">
+        Introducción
+      </button>
+      <div id="collapseSection2" class="collapse">
+        <ul class="list-group list-unstyled">
+          <li><a [routerLink]="'/actividad-1'" type="button" class="btn list-group-item-action border-bottom">Actividad 1</a></li>
+          <li><a [routerLink]="'/actividad-2'" type="button" class="btn list-group-item-action py-2 border-bottom rounded">Actividad 2</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="list-group-item btn list-group-item-action border-bottom" >
+      <!-- Componente Explicación -->
+      <button class="btn rounded" [routerLink]="'/explicacion'" type="button">
+        Explicación
+      </button>
+    </li>
+  </ul>
+</div>

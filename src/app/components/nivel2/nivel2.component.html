@@ -1,0 +1,278 @@
+<div class="container mt-2">
+    <h3 style="color: #015883;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="orange" class="bi bi-file-earmark" viewBox="0 0 16 16">
+            <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"/>
+          </svg>
+        Conjunto de selección múltiple</h3>
+    <hr>
+    <h4 style="color: #015883;">Resolver las sumas</h4>
+    <div class="container">
+        <form novalidate class="billing-form float-start" (ngSubmit)="OnSubmit()" [formGroup]="sumasForm">
+            <!-- Primera -->
+            <p style="font-size: large;">A. ¿Cuánto es 2+2?</p>
+            <div class="container-fluid">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" formControlName="primero" value="1" name="primero"
+                        id="flexRadioDefault1" [attr.disable]="respuesta">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        1
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" formControlName="primero" value="2" name="primero"
+                        id="flexRadioDefault2">
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        2
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" formControlName="primero" value="3" name="primero"
+                        id="flexRadioDefault3">
+                    <label class="form-check-label" for="flexRadioDefault3">
+                        3
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" formControlName="primero" value="4" name="primero"
+                        id="flexRadioDefault4">
+                    <label class="form-check-label" for="flexRadioDefault4">
+                        4
+                    </label>
+                </div>
+            </div>
+
+            <div *ngIf="respuesta">
+                <p *ngIf="uno">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="green"
+                        class="bi bi-check-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                        <path
+                            d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z" />
+                    </svg>
+                    Respuesta correcta
+                </p>
+                <p *ngIf="!uno">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="red" class="bi bi-x-circle"
+                        viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                        <path
+                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                    </svg>
+                    Respuesta incorrecta
+                </p>
+                <button class="btn btn-primary" type="button" (click)="OnRetroalimentacion('A', 4, uno, '2+2')"
+                data-bs-toggle="modal" data-bs-target="#bootstrapModel">Ver retroalimentación</button>
+            </div>
+            <br>
+            <!-- Segunda -->
+            <p style="font-size: large;">B. ¿Cuánto es 4+6?</p>
+            <div class="container-fluid">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" formControlName="segundo" value="15" name="segundo"
+                        id="1flexRadioDefault">
+                    <label class="form-check-label" for="1flexRadioDefault">
+                        15
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" formControlName="segundo" value="10" name="segundo"
+                        id="2flexRadioDefault">
+                    <label class="form-check-label" for="2flexRadioDefault">
+                        10
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" formControlName="segundo" value="6" name="segundo"
+                        id="3flexRadioDefault">
+                    <label class="form-check-label" for="3flexRadioDefault">
+                        6
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" formControlName="segundo" value="8" name="segundo"
+                        id="4flexRadioDefault">
+                    <label class="form-check-label" for="4flexRadioDefault">
+                        8
+                    </label>
+                </div>
+            </div>
+            <div *ngIf="respuesta">
+                <p *ngIf="dos">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="green"
+                        class="bi bi-check-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                        <path
+                            d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z" />
+                    </svg>
+                    Respuesta correcta
+                </p>
+                <p *ngIf="!dos">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="red" class="bi bi-x-circle"
+                        viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                        <path
+                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                    </svg>
+                    Respuesta incorrecta
+                </p>
+                <button class="btn btn-primary" type="button" (click)="OnRetroalimentacion('B', 10, dos, '4+6')"
+                data-bs-toggle="modal" data-bs-target="#bootstrapModel">Ver retroalimentación</button>
+            </div>
+            <br>
+            <!-- Tercera -->
+            <p style="font-size: large;">C. ¿Cuánto es 3+2?</p>
+            <div class="container-fluid">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" formControlName="tercero" value="0" name="tercero"
+                        id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        0
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" formControlName="tercero" value="7" name="tercero"
+                        id="flexRadioDefault2">
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        7
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" formControlName="tercero" value="9" name="tercero"
+                        id="flexRadioDefault3">
+                    <label class="form-check-label" for="flexRadioDefault3">
+                        9
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" formControlName="tercero" value="5" name="tercero"
+                        id="flexRadioDefault4">
+                    <label class="form-check-label" for="flexRadioDefault4">
+                        5
+                    </label>
+                </div>
+            </div>
+            <div *ngIf="respuesta">
+                <p *ngIf="tres">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="green"
+                        class="bi bi-check-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                        <path
+                            d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z" />
+                    </svg>
+                    Respuesta correcta
+                </p>
+                <p *ngIf="!tres">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="red" class="bi bi-x-circle"
+                        viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                        <path
+                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                    </svg>
+                    Respuesta incorrecta
+                </p>
+                <button class="btn btn-primary" type="button" (click)="OnRetroalimentacion('C', 5, tres, '3+2')"
+                data-bs-toggle="modal" data-bs-target="#bootstrapModel">Ver retroalimentación</button>
+            </div>
+            <br>
+            <!-- Cuarta -->
+            <p style="font-size: large;">D. ¿Cuánto es 7+1?</p>
+            <div class="container-fluid">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" formControlName="cuarto" value="9" name="cuarto"
+                        id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        9
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" formControlName="cuarto" value="4" name="cuarto"
+                        id="flexRadioDefault2">
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        4
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" formControlName="cuarto" value="8" name="cuarto"
+                        id="flexRadioDefault3">
+                    <label class="form-check-label" for="flexRadioDefault3">
+                        8
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" formControlName="cuarto" value="5" name="cuarto"
+                        id="flexRadioDefault4">
+                    <label class="form-check-label" for="flexRadioDefault4">
+                        5
+                    </label>
+                </div>
+            </div>
+            <div *ngIf="respuesta">
+                <p *ngIf="cuatro">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="green"
+                        class="bi bi-check-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                        <path
+                            d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z" />
+                    </svg>
+                    Respuesta correcta
+                </p>
+                <p *ngIf="!cuatro">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="red" class="bi bi-x-circle"
+                        viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                        <path
+                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                    </svg>
+                    Respuesta incorrecta
+                </p>
+                <button class="btn btn-primary" type="button" (click)="OnRetroalimentacion('D', 8, cuatro, '7+1')"
+                    data-bs-toggle="modal" data-bs-target="#bootstrapModel">Ver retroalimentación</button>
+            </div>
+            <br>
+            <div class="container justify-content-center" *ngIf="!respuesta">
+                <button class="btn btn-primary" type="submit" [disabled]="!sumasForm.valid">Revisar Respuestas</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- <div class="modal fade" id="bootstrapModel" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+        tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-3 center" id="exampleModalToggleLabel">Retroalimentación</h1>
+                </div>
+                
+                <div class="modal-body">
+                    <h5 class="center">Ejercicio {{infoModal.ejercicio}}</h5>
+                   <div class="center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="orange"
+                        class="bi bi-info-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                        <path
+                            d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                    </svg>
+                   </div>
+                   <br>
+                  
+                   <div class="center" *ngIf="infoModal.validacion">
+                    Felicitaciones, lo hiciste muy bien.
+                   </div>
+                   <div class="center" *ngIf="!infoModal.validacion">
+                    {{infoModal.operacion}} es igual a {{infoModal.valor}}
+                   </div>
+                   <ng-template #observacion>
+                    
+                   </ng-template>
+                   <br>
+                    <div class="center">
+                    <button class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                   </div>
+                </div>
+               
+            </div>
+        </div>
+    </div> -->
+    <!-- <div class="modal-dialog modal-dialog-centered modal-sm"> -->
+
+</div>
